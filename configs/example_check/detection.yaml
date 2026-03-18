@@ -1,0 +1,5 @@
+engine: regex
+regex:
+  patterns:
+    - "\\b(conflict|interest|commission|fee|disclose|material)\\b"
+  flags: IGNORECASE
