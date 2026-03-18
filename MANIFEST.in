@@ -1,0 +1,3 @@
+include CLAUDE.md
+include README.md
+recursive-include src/scrutiny/package_data *

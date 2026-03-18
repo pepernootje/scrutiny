@@ -1,0 +1,16 @@
+adapter: azure_openai
+model: gpt-4
+temperature: 0.0
+prompt_template: |
+  You are a compliance analyst reviewing a prospectus document.
+  Topic: conflict of interest
+
+  Chunk:
+  {{ chunk }}
+
+  Respond with:
+  DECISION: YES or NO
+  JUSTIFICATION: one sentence explaining your decision
+output_fields:
+  - decision
+  - justification
