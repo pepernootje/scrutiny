@@ -6,6 +6,7 @@ Writes to session state: chunking_config, chunks.
 
 from __future__ import annotations
 
+import io
 import logging
 
 import pdfplumber
@@ -65,7 +66,7 @@ if st.button("▶ Run chunking", type="primary"):
         try:
             pdf_bytes: bytes = st.session_state["document"]
             text_parts: list[str] = []
-            with pdfplumber.open(pdf_bytes) as pdf:
+            with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
                 for page in pdf.pages:
                     page_text = page.extract_text() or ""
                     if page_text:
